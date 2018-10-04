@@ -1,6 +1,6 @@
 package gdcn.BeastMaster;
 
-interface ItemContainer {
+public interface ItemContainer {
 
 
 
