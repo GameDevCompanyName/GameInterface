@@ -2,6 +2,7 @@ package gdcn.BeastMaster.Character.NPC;
 
 import gdcn.BeastMaster.Character.Character;
 import gdcn.BeastMaster.ItemContainer;
+import gdcn.BeastMaster.World.Location;
 
 import java.util.List;
 
@@ -27,5 +28,8 @@ public interface Player extends Character {
 
     /** Возвращает список предметов, используемых в данный момент игроком **/
     public ItemContainer getShmot();
+
+    /** Возвращает локацию, в которой находится игрок **/
+    public Location getPlayerLocation();
 
 }
