@@ -2,7 +2,7 @@ package gdcn.BeastMaster;
 
 import java.util.List;
 
-interface ItemContainer {
+public interface ItemContainer {
 
     /** Возвращает общую вместительность контейнера **/
     public Integer getCapacity();
