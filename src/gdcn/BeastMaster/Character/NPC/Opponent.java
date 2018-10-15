@@ -1,7 +1,7 @@
 package gdcn.BeastMaster.Character.NPC;
 
 import gdcn.BeastMaster.Character.Character;
-import gdcn.BeastMaster.ItemContainer;
+import gdcn.BeastMaster.Items.ItemContainer;
 
 public interface Opponent extends Character {
 

@@ -1,4 +1,4 @@
-package gdcn.BeastMaster;
+package gdcn.BeastMaster.Items;
 
 public enum ItemRarity {
 

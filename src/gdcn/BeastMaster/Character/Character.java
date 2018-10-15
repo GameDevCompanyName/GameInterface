@@ -1,6 +1,6 @@
 package gdcn.BeastMaster.Character;
 
-import gdcn.BeastMaster.ItemContainer;
+import gdcn.BeastMaster.Items.ItemContainer;
 
 public interface Character {
 
