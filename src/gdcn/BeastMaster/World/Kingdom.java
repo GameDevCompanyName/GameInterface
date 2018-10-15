@@ -31,7 +31,7 @@ public interface Kingdom {
      *  Если лор одного королевства не открыт, сложность других
      *  королевств возрастает и снижается при открытии всех частей лора
      *  данного королевства **/
-    public Integer getDifficulty();
+    public Double getDifficulty();
 
     /** Возвращает true, если все части лора данного королевства открыты **/
     public Boolean isDeveloped();
