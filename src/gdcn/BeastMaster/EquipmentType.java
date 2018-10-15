@@ -1,4 +1,5 @@
 package gdcn.BeastMaster;
 
-public enum WeaponType {
+public enum EquipmentType {
+    ARMOR, WEAPON
 }
