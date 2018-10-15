@@ -11,4 +11,5 @@ public interface Stranger extends Character {
 
     /** Возвращает список историй, используемых Stranger в диалоге и отсылающих к лору **/
     public List<String> getStories();
+
 }

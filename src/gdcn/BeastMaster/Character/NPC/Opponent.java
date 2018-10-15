@@ -8,6 +8,6 @@ public interface Opponent extends Character {
     /** Возвращает тип противника - один из BEAST, BANDIT, KNIGHT, BOSS **/
     public OpponentType getType();
 
-
+    public Boolean isAgressive();
 
 }

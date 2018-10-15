@@ -1,8 +1,14 @@
 package gdcn.BeastMaster.Character;
 
+import gdcn.BeastMaster.Action.ActionContainer;
+import gdcn.BeastMaster.Items.Equipment;
 import gdcn.BeastMaster.Items.ItemContainer;
 
 public interface Character {
+
+    /** ==============================================
+     *  Методы для получения базовых свойств персонажа
+     *  ============================================== **/
 
     /** Возвращает имя персонажа **/
     public String getName();
@@ -25,12 +31,33 @@ public interface Character {
     /** Возвращает количество очков удачи персонажа **/
     public Integer getLuck();
 
-    /** Возвращает количество денег в кошельке у персонажа **/
-    public Integer getMoney();
+    /** Возвращает true, если персонаж мертв **/
+    public Boolean isDead();
+
+    /** =====================================================
+     *  Методы для получения дополнительных свойств персонажа
+     *  ===================================================== **/
 
     /** Возвращает инвентарь персонажа **/
     public ItemContainer getItemContainer();
 
-    /** Возвращает true, если персонаж мертв **/
-    public Boolean isDead();
+    /** Возвращает контейнер действий персонажа **/
+    public ActionContainer getActionContainer();
+
+    /** Возвращает количество денег в кошельке у персонажа **/
+    public Integer getMoney();
+
+    /** Метод для экипировки брони. Возвращает false в исключительных случаях **/
+    public Boolean equipArmor();
+
+    /** Метод для экипировки оружия. Возвращает false в исключительных случаях **/
+    public Boolean equipWeapon();
+
+    /** Снимает экипировку. После снятия предмет перемещается в инвентарь персонажа.
+     *  Возвращает false в исключительных случаях **/
+    public Boolean removeArmor();
+
+    /** Убрает оружие. После снятия предмет перемещается в инвентарь персонажа.
+     *  Возвращает false в исключительных случаях **/
+    public Boolean removeWeapon();
 }

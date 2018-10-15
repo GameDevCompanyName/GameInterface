@@ -24,4 +24,10 @@ public interface NPC extends Character {
     /** Возвращает список предметов, выпадающих с персонажа при его убийстве **/
     public ItemContainer getLoot();
 
+    /** Возвращает true, если данный NPC важен для лора.
+     *  Наличие NPC такого типа в локации автоматически делает ее
+     *  важной для лора (см. Location, Kingdom). Однако, его
+     *  отсутствие не означает обратного **/
+    public Boolean isValuableForLore();
+
 }
