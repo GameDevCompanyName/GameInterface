@@ -2,6 +2,20 @@ package gdcn.BeastMaster;
 
 interface GameItem {
 
+    /** Конструктор предмета. Задаёт объекту все необходимые свойства.
+     * Если предмет только что был создан, он не имеет контейнера. **/
+    public void GameItem(
+            String name,
+            ItemRarity rarity,
+            Integer weight,
+            Integer baseCost,
+            Boolean isUsable,
+            Boolean isDisposable,
+            Boolean isDropable,
+            Boolean isSellable,
+            Boolean isSoulbound
+            );
+
     /** Возвращает полное название предмета - то, которое будет
      * отображаться в интвентаре, у торговца, "на полу" и тому подобное. **/
     public String getName();
@@ -33,11 +47,19 @@ interface GameItem {
      * будут браться из одного списка или вроде того) **/
     public Boolean isDropable();
 
+    /** Возвращает логическую переменную, обозначающую может и данный
+     * предмет быть проданным/купленным. **/
+    public Boolean isSellable();
+
     /** Возвращает логическую переменную, обозначающую пропадёт ли
      * предмет у игрока, если он умрёт. Наиболее актуально для подземелий,
      * так как Soulbound-предметы никогда не будут потеряны игроком
      * без его желания. **/
     public Boolean isSoulbound();
+
+    /** Возвращает логическую переменную, обозначающую можно ли
+     * переместить предмет из контейнера. **/
+    public Boolean isTransferable();
 
     /** Возвращает ссылку на контейнер, в котором в данный момент находится
      * предмет. **/
