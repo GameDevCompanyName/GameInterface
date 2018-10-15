@@ -1,4 +1,4 @@
-package gdcn.BeastMaster;
+package gdcn.BeastMaster.Items;
 
 import java.util.List;
 

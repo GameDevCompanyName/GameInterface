@@ -1,20 +1,20 @@
-package gdcn.BeastMaster;
+package gdcn.BeastMaster.Items;
 
 interface GameItem {
 
     /** Конструктор предмета. Задаёт объекту все необходимые свойства.
      * Если предмет только что был создан, он не имеет контейнера. **/
-    public void GameItem(
-            String name,
-            ItemRarity rarity,
-            Integer weight,
-            Integer baseCost,
-            Boolean isUsable,
-            Boolean isDisposable,
-            Boolean isDropable,
-            Boolean isSellable,
-            Boolean isSoulbound
-            );
+//    public GameItem(
+//            String name,
+//            ItemRarity rarity,
+//            Integer weight,
+//            Integer baseCost,
+//            Boolean isUsable,
+//            Boolean isDisposable,
+//            Boolean isDropable,
+//            Boolean isSellable,
+//            Boolean isSoulbound
+//            );
 
     /** Возвращает полное название предмета - то, которое будет
      * отображаться в интвентаре, у торговца, "на полу" и тому подобное. **/
