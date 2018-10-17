@@ -2,7 +2,7 @@ package gdcn.BeastMaster.Action;
 
 public enum ActionResult {
 
-    HIT, DODGE, MISS, BLOCK, CRITICAL
+    HIT, DODGE, MISS, BLOCK, CRITICAL, KILLED
 
     /**
      * HIT - Обычное попадание/успешное применение к цели
@@ -10,6 +10,7 @@ public enum ActionResult {
      * MISS - Не удалось попасть по цели/применить
      * BLOCK - Заблокированное попадание/приминение
      * CRITICAL - Критическое попадание/приминение
+     * KILLED - Цель метрва
      * **/
 
 }
