@@ -1,4 +1,4 @@
-package gdcn.BeastMaster.World;
+package gdcn.BeastMaster.World.Location;
 
 public interface Monument {
 
