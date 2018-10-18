@@ -14,6 +14,11 @@ public interface Treasure {
     public String getName();
 
     /**
+     * Описание сокровища
+     **/
+    public String getDescription();
+
+    /**
      * Стоимость сокровища, которая должна начислится игроку, когда он его заберёт
      **/
     public Integer getCost();

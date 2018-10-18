@@ -5,7 +5,7 @@ import gdcn.BeastMaster.Character.NPC.Trader;
 import gdcn.BeastMaster.Items.GameItem;
 import gdcn.BeastMaster.Items.ItemContainer;
 
-public interface Trade {
+public interface Trade extends Interaction {
 
     /**
      * Возвращает торговца
