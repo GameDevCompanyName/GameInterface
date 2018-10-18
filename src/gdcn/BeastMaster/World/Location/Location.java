@@ -1,5 +1,7 @@
 package gdcn.BeastMaster.World.Location;
 
+import gdcn.BeastMaster.World.MapPoint;
+
 import java.util.List;
 
 public interface Location {
@@ -64,5 +66,11 @@ public interface Location {
      * Возвращает true, если в локации находится игрок
      **/
     public Boolean hasPlayer();
+
+    /**
+     * Возвращает координаты данной локации ( для представления координат
+     * используется вспомогательный класс MapPoint)
+     **/
+    public MapPoint getCoordinates();
 
 }

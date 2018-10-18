@@ -15,4 +15,10 @@ public interface World {
      *  Если таких нет, возвращает NULL **/
     public List<Kingdom> getDevelopedKingdoms();
 
+    /** Возвращает карту мира **/
+    public GameMap getGameMap();
+
+    /** Возвращает лор мира, доступный игроку в данный момент игры **/
+    public String getLore();
+
 }
