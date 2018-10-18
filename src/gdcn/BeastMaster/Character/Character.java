@@ -5,7 +5,7 @@ import gdcn.BeastMaster.Character.Effects.Effect;
 import gdcn.BeastMaster.Character.Effects.EffectContainer;
 import gdcn.BeastMaster.Items.Equipment;
 import gdcn.BeastMaster.Items.ItemContainer;
-import gdcn.BeastMaster.World.*;
+import gdcn.BeastMaster.World.Location.Location;
 
 public interface Character {
 

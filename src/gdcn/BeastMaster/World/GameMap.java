@@ -2,7 +2,6 @@ package gdcn.BeastMaster.World;
 
 import gdcn.BeastMaster.World.Location.Location;
 
-import java.awt.Point;
 import java.util.List;
 
 public interface GameMap {
