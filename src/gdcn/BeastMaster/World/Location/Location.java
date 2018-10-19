@@ -73,4 +73,10 @@ public interface Location {
      **/
     public MapPoint getCoordinates();
 
+    /** Возвращает true, если локация является мирной (т.е. в ней нет противника) **/
+    public Boolean isCivil();
+
+    /** Возвращает true, если в локации находится памятник. Кроме этого, при наличии
+     *  памятника локация автоматически становится значимой для лора **/
+    public Boolean hasMonument();
 }

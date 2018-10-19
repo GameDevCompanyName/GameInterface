@@ -1,6 +1,7 @@
 package gdcn.BeastMaster.Character.NPC;
 
 import gdcn.BeastMaster.Character.Character;
+import gdcn.BeastMaster.Character.Interactions.Trade;
 import gdcn.BeastMaster.Items.ItemContainer;
 
 import java.util.List;
@@ -13,5 +14,7 @@ public interface Trader extends Character {
     /** Возвращает список предметов, предлагаемых Trader на продажу **/
     public ItemContainer getGoods();
 
+    /** Возвращает взаимодействие торговли **/
+    public Trade getTrade();
 
 }
