@@ -1,5 +1,6 @@
 package GameInterface.Character;
 
+import GameClass.Items.Weapons.Weapon;
 import GameInterface.Character.Effects.Effect;
 import GameInterface.Character.Effects.EffectContainer;
 import GameInterface.Action.ActionContainer;
@@ -25,8 +26,8 @@ public interface Character {
     /** Возвращает количество очков ловкости персонажа **/
     public Integer getAgility();
 
-    /** Вовзращает количество очков атаки персонажа **/
-    public Integer getAttack();
+    /** Вовзращает количество базовых очков атаки персонажа (без грейдов) **/
+    public Integer getBasicAttack();
 
     /** Возвращает количество очков интеллекта персонажа **/
     public Integer getIntellect();
@@ -40,6 +41,17 @@ public interface Character {
 
     /** Возвращает инвентарь персонажа **/
     public ItemContainer getItemContainer();
+
+    //TODO
+    /** Возвращает текущее оружие персонажа **/
+    public Equipment getCurrentWeapon();
+
+    //TODO
+    /** Возвращает текущую броню персонажа **/
+    public Equipment getCurrentArmor();
+
+    /** Вовзращает количество очков атаки персонажа с учетом всех шмоток **/
+    public Integer getFullAttack();
 
     /** Возвращает контейнер действий персонажа **/
     public ActionContainer getActionContainer();

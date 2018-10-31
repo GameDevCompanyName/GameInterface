@@ -1,9 +1,8 @@
-package GameClass.Characters.NPC;
+package GameClass.Characters.TestCharacters;
 
 import java.util.List;
 
 import GameClass.Actions.BasicAttack;
-import GameClass.Characters.DummyCharacter;
 import GameInterface.Action.Action;
 import GameInterface.Character.Character;
 import GameInterface.Character.NPC.Opponent;

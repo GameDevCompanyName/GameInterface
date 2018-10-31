@@ -3,7 +3,7 @@ package GameClass.WorldElemets;
 import java.util.ArrayList;
 import java.util.List;
 
-import GameClass.Characters.NPC.DummyEnemy;
+import GameClass.Characters.TestCharacters.DummyEnemy;
 import GameInterface.Character.NPC.NPC;
 import GameInterface.World.Location.Location;
 import GameInterface.World.Location.LocationType;

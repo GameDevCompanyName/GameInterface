@@ -1,4 +1,4 @@
-package GameClass.Characters;
+package GameClass.Characters.TestCharacters;
 
 import GameInterface.Action.ActionContainer;
 import GameInterface.Character.Character;
@@ -34,8 +34,8 @@ public class DummyCharacter implements Character {
     }
 
     @Override
-    public Integer getAttack() {
-        return 1;
+    public Integer getBasicAttack() {
+        return getAgility()/2 + getStrength();
     }
 
     @Override
@@ -51,6 +51,21 @@ public class DummyCharacter implements Character {
     @Override
     public ItemContainer getItemContainer() {
         return null;
+    }
+
+    @Override
+    public Equipment getCurrentWeapon() {
+        return null;
+    }
+
+    @Override
+    public Equipment getCurrentArmor() {
+        return null;
+    }
+
+    @Override
+    public Integer getFullAttack() {
+        return getBasicAttack();
     }
 
     @Override
