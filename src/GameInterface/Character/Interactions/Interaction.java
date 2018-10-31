@@ -3,15 +3,15 @@ package GameInterface.Character.Interactions;
 public interface Interaction {
 
 //    /** Возвращает всех Персонажей, замешанных во взаимодействии (например торговца и игрока) **/
-//    public List<Character> getCharacters();
+//    public List<Characters> getCharacters();
 //
 //    /** Возвращает всех Персонажей "левой" стороны
 //     * Например во время боя "слева" находится Игрок, а "справа" противники.
 //     * В данном случае данный метод вернёт список содержащий игрока.**/
-//    public List<Character> getLeftSide();
+//    public List<Characters> getLeftSide();
 //
 //    /** Аналогичен предыдущему методу, но возвращает противников Персонажа **/
-//    public List<Character> getRightSide();
+//    public List<Characters> getRightSide();
 
     /**
      * Возвращает состояние взаимодействия, ничего не меняя в самом взаимодействии

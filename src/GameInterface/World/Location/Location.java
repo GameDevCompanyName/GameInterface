@@ -1,5 +1,6 @@
 package GameInterface.World.Location;
 
+import GameInterface.Character.NPC.NPC;
 import GameInterface.World.MapPoint;
 
 import java.util.List;
@@ -52,10 +53,14 @@ public interface Location {
      **/
     public Boolean isTravelled();
 
+    //TODO
+    public Boolean hasTreasure();
+
     /** Возвращает сокровище, находящееся в локации. Если оно уже было собрано
      *  игроком, возвращает NULL
-     public Treasure getTreasure();
      **/
+    //TODO
+    public Treasure getTreasure();
 
     /**
      * Возвращает один из типов локации: DUNGEON, FOREST FLATLAND или ROCK
@@ -79,4 +84,14 @@ public interface Location {
     /** Возвращает true, если в локации находится памятник. Кроме этого, при наличии
      *  памятника локация автоматически становится значимой для лора **/
     public Boolean hasMonument();
+
+    //TODO
+    public Boolean hasNPC();
+    //TODO
+    public NPC getNPC();
+    //TODO
+    public void playerGone();
+    //TODO
+    public void playerCame();
+
 }

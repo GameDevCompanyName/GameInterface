@@ -93,13 +93,21 @@ public interface Character {
      *  Возвращает false в исключительных случаях **/
     public Boolean reduceIntellect(Integer points);
 
+    //TODO
     /** Увеличивает показатель здоровья персонажа на величину points
      *  Возвращает false в исключительных случаях **/
-    public Boolean heal(Integer points);
+    public Boolean dealHeal(Integer points);
 
-    /** Уменьшает показатель здоровья персонажа на величину points
+    //TODO
+    /** Уменьшает показатель здоровья персонажа на нужную величину,
+     * рассчитывая прошедший по персонажу, либо возвращает ещё какую-нить
+     * хуйню в духе блять УВОРОТ или блять чёнить ещё **/
+    public Boolean dealPhysicalDamage(Integer points);
+
+    //TODO
+    /** Аналогично физическому урону, но рассчитывает урон немного иначе
      *  Возвращает false в исключительных случаях **/
-    public Boolean damage(Integer points);
+    public Boolean dealMagicalDamage(Integer points);
 
     /** ======================================================
      *  Методы для обновления дополнительных свойств персонажа
@@ -135,8 +143,12 @@ public interface Character {
      *  Прочие вспомогательные методы
      *  ============================= **/
 
-    /** Возвращает локацию, в которой находится игрок в данный момент **/
+    /** Возвращает локацию, в которой находится персонаж в данный момент **/
     public Location getLocation();
+
+    //TODO
+    /** Перемещает персонажа в локацию (задаёт текущую локацию) **/
+    public Boolean changeLocationTo(Location location);
 
     /** Возвращает true, если персонаж мертв **/
     public Boolean isDead();
