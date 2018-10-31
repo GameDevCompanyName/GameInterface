@@ -8,7 +8,7 @@ import GameInterface.World.World;
 
 public class SimpleWorldClass implements World {
 
-
+    GameMap map = new SimpleGameMapClass();
 
     @Override
     public List<Kingdom> getKingdoms() {
@@ -27,11 +27,12 @@ public class SimpleWorldClass implements World {
 
     @Override
     public GameMap getGameMap() {
-
+        return map;
     }
 
     @Override
     public String getLore() {
         return "Тестовый мир для теста тестов";
     }
+
 }

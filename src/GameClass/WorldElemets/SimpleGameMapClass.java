@@ -13,6 +13,14 @@ public class SimpleGameMapClass implements GameMap {
 
     Location[][] map = new Location[3][3];
 
+    public SimpleGameMapClass(){
+        for (int y = 0; y < map.length; y++){
+            for (int x = 0; x < map[0].length; x++){
+                map[x][y] = new SimpleLocationClass(new MapPoint(x, y));
+            }
+        }
+    }
+
     @Override
     public Location getLocationAt(MapPoint coordinates) {
         if (coordinates.isWithin(map))
