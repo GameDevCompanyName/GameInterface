@@ -1,5 +1,7 @@
 package GameInterface.Action;
 
+import GameInterface.Character.Character;
+
 public interface Action {
 
     /** Описывает все действия совершаемые с Персонажами**/

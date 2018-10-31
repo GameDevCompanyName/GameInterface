@@ -1,9 +1,11 @@
 package GameClass.Items.Weapons;
 
+import GameClass.Actions.BasicAttack;
 import GameClass.Constants.Integers;
 import GameClass.Items.GameItemClass;
 import GameClass.Utilities.StringGenerator;
 import GameClass.Utilities.Utilities;
+import GameInterface.Action.Action;
 import GameInterface.Action.ActionContainer;
 import GameInterface.Items.Equipment;
 import GameInterface.Items.EquipmentType;
@@ -40,12 +42,39 @@ public class Weapon extends GameItemClass implements Equipment {
         this.generateCost(randomGenerator);
         this.generateWeight(randomGenerator);
         this.generateType(randomGenerator);
-        this.generateActions();
+        this.generateActions(randomGenerator);
         this.generateName(randomGenerator);
     }
 
-    private void generateActions() {
-        //TODO
+    private void generateActions(Random randomGenerator) {
+        Action basicAttack = new BasicAttack("Удар оружием", 1.0);
+//        boolean success = actions.addAction(basicAttack);
+        System.out.println(basicAttack);
+//        if (!success){
+//            return;
+            //TODO
+//        }
+        Action secondaryAttack;
+        Double randomOffset = (-2 + randomGenerator.nextDouble()*4)/10;
+        switch (weaponType){
+            case AXE:
+                secondaryAttack = new BasicAttack("Сильный удар", 1.8 + randomOffset);
+                break;
+            case KNIFE:
+                secondaryAttack = new BasicAttack("Укол в печень", 1.3 + randomOffset);
+                break;
+            case SWORD:
+                secondaryAttack = new BasicAttack("Рыцарский приём", 1.5 + randomOffset);
+                break;
+                default:
+                    secondaryAttack = new BasicAttack("Арабское сальто", 0.1);
+        }
+//        success = actions.addAction(secondaryAttack);
+        System.out.println(secondaryAttack);
+//        if (!success){
+//            return;
+            //TODO
+//        }
     }
 
     private void generateType(Random randomGenerator) {
@@ -60,8 +89,10 @@ public class Weapon extends GameItemClass implements Equipment {
 
     private void generateName(Random randomGenerator) {
         StringBuilder sb = new StringBuilder();
+
         if (randomGenerator.nextInt(100) < Integers.WEAPON_NAME_ADJECTIVE_CHANCE)
             sb.append(StringGenerator.weaponAdjective()).append(" ");
+
         sb.append(StringGenerator.weaponMainName(this.weaponType));
         if (randomGenerator.nextInt(100) < Integers.WEAPON_NAME_POST_CHANCE)
             sb.append(" ").append(StringGenerator.weaponPostName());
@@ -124,4 +155,16 @@ public class Weapon extends GameItemClass implements Equipment {
         return true;
     }
 
+    @Override
+    public String toString() {
+        return "Weapon{" +
+                "baseDamage=" + baseDamage +
+                //", actions=" + actions +
+                ", weaponType=" + weaponType +
+                ", name='" + name + '\'' +
+                ", rarity=" + rarity +
+                //", weight=" + weight +
+                ", baseCost=" + baseCost +
+                '}';
+    }
 }

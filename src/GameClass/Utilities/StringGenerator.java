@@ -27,7 +27,7 @@ public class StringGenerator {
     }
 
     public static String weaponPostName() {
-        return (String) Utilities.getRandomElement(Strings.WEAPON_ADJECTIVES, randomGenerator);
+        return (String) Utilities.getRandomElement(Strings.WEAPON_POSTNAME, randomGenerator);
     }
 
 }

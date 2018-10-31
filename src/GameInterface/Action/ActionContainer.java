@@ -38,14 +38,14 @@ public interface ActionContainer {
      * Вернёт False в исключительных ситуациях. (например действие уже есть в контейнере)
      **/
 
-    public Boolean addAction();
+    public Boolean addAction(Action action);
 
     /**
      * Удаляет действие из контейнера.
      * Вернёт False только в исключительных ситуациях. (например, действия нет)
      **/
 
-    public Boolean removeAction();
+    public Boolean removeAction(Action action);
 
     /**
      * Аналогично addAction, но работает со списком действий
