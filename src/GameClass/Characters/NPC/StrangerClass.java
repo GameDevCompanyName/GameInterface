@@ -7,7 +7,11 @@ import GameInterface.World.Location.Location;
 import java.util.ArrayList;
 import java.util.List;
 
+//TODO Почему интерфейс Stranger не расширяет интерфейс NPC?
 public class StrangerClass extends CharacterClass implements Stranger {
+
+    /*Todo Должен содержать не строки, а варианты диалогов.
+    Советую пока оставить этот класс, пока не решим как его лучше сделать*/
 
     private ArrayList<String> phrases;
     private ArrayList<String> stories;

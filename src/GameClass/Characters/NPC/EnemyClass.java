@@ -11,6 +11,7 @@ import GameInterface.World.Location.Location;
 
 import java.util.List;
 
+//TODO Почему Enemy а не Opponent?
 public class EnemyClass extends CharacterClass implements Opponent {
 
     private OpponentType type;
@@ -47,13 +48,14 @@ public class EnemyClass extends CharacterClass implements Opponent {
     @Override
     public List<String> getWarPhrases() {
         return null;
-    }
+    }//TODO
 
     @Override
     public ItemContainer getLoot() {
         return null;
-    }
+    }//TODO
 
+    //TODO Этот метод должен находиться не в интерфейсе Opponent а в NPC
     @Override
     public Boolean makeNextFightTurn(Character enemy) {
         Action action = new BasicAttack("Бац", 1.0);

@@ -73,18 +73,20 @@ public class CharacterClass implements Character {
     @Override
     public ItemContainer getItemContainer() {
         return null;
-    }
+    }//TODO
 
     @Override
     public Equipment getCurrentWeapon() {
         return null;
-    }
+    }//TODO
 
     @Override
     public Equipment getCurrentArmor() {
         return null;
-    }
+    }//TODO
 
+    //TODO Чем FullAtack должен отличаться от getBasicAtack?
+    //Может стоит сделать только один публичный метод с атакой?
     @Override
     public Integer getFullAttack() {
         return getBasicAttack();
@@ -93,7 +95,7 @@ public class CharacterClass implements Character {
     @Override
     public ActionContainer getActionContainer() {
         return null;
-    }
+    }//TODO
 
     @Override
     public Integer getMoney() {
@@ -103,68 +105,82 @@ public class CharacterClass implements Character {
     @Override
     public EffectContainer getEffects() {
         return null;
-    }
+    }//TODO
 
+    //TODO А если персонаж мёртв?
     @Override
     public Boolean gainLuck(Integer points) {
         luck += points;
         return true;
     }
 
+    //TODO А если персонаж мёртв?
     @Override
     public Boolean gainStrength(Integer points) {
         strength += points;
         return true;
     }
 
+    //TODO А если персонаж мёртв?
     @Override
     public Boolean gainAgility(Integer points) {
         agility += points;
         return true;
     }
 
+    //TODO А если персонаж мёртв?
     @Override
     public Boolean gainIntellect(Integer points) {
         intellect += points;
         return true;
     }
 
+    //TODO Что если luck <= 0? или персонаж мёртв
     @Override
     public Boolean reduceLuck(Integer points) {
         luck -= points;
         return true;
     }
 
+    //TODO Что если str <= 0? или персонаж мёртв
     @Override
     public Boolean reduceStrength(Integer points) {
         strength -= points;
         return true;
     }
 
+    //TODO Что если agi <= 0? или персонаж мёртв
     @Override
     public Boolean reduceAgility(Integer points) {
         agility -= points;
         return true;
     }
 
+    //TODO Что если int <= 0? или персонаж мёртв
     @Override
     public Boolean reduceIntellect(Integer points) {
         intellect -= points;
         return true;
     }
 
+    //TODO Что если кол-во хп максимально? Нужно отдельно хранить maxHP
+    //Что если персонаж мёртв?
     @Override
     public Boolean dealHeal(Integer points) {
         HP += points;
         return true;
     }
 
+    //TODO Что если HP <= 0?
+    //Что если персонаж мёртв?
     @Override
     public Boolean dealPhysicalDamage(Integer points) {
         HP -= points;
         return true;
     }
 
+    //TODO Что если HP <= 0?
+    //Что если персонаж мёртв?
     @Override
     public Boolean dealMagicalDamage(Integer points) {
         HP -= points;
@@ -197,6 +213,7 @@ public class CharacterClass implements Character {
         return true;
     }
 
+    //TODO Что если money < points?
     @Override
     public Boolean loseMoney(Integer points) {
         money -= points;
@@ -206,19 +223,20 @@ public class CharacterClass implements Character {
     @Override
     public Boolean putEffect(Effect effect) {
         return false;
-    }
+    }//TODO
 
     @Override
     public Location getLocation() {
         return currentLocation;
     }
 
+    //TODO Что если location == null?
     @Override
     public Boolean changeLocationTo(Location location) {
         currentLocation = location;
         return true;
     }
-
+    
     @Override
     public Boolean isDead() {
         return (HP <= 0);
