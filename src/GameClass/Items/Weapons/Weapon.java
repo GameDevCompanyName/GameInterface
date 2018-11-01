@@ -35,6 +35,26 @@ public class Weapon extends GameItemClass implements Equipment {
      * **/
     protected WeaponType weaponType;
 
+    /**
+     * Полный конструктор с явным указанием всех параметров
+     * **/
+    public Weapon(String name,
+                  ItemRarity rarity,
+                  Integer weight,
+                  Integer baseCost,
+                  Integer baseDamage,
+                  ActionContainer actions,
+                  WeaponType weaponType) {
+        super(name, rarity, weight, baseCost);
+        this.baseDamage = baseDamage;
+        this.actions = actions;
+        this.weaponType = weaponType;
+    }
+
+    /**
+     * Конструктор с указанием суровости локации и редкости, исходя из которых генерируется предмет
+     * **/
+    //TODO Зависимость от редкости
     public Weapon(Integer hardnessPoints, ItemRarity rarity) {
         this.rarity = rarity;
         Random randomGenerator = new Random();
@@ -46,6 +66,10 @@ public class Weapon extends GameItemClass implements Equipment {
         this.generateName(randomGenerator);
     }
 
+    /**
+     * Генерирует простые действия для некоторых типов оружия
+     * **/
+    //TODO Вынести констранты
     private void generateActions(Random randomGenerator) {
         Action basicAttack = new BasicAttack("Удар оружием", 1.0);
 //        boolean success = actions.addAction(basicAttack);
@@ -77,16 +101,26 @@ public class Weapon extends GameItemClass implements Equipment {
 //        }
     }
 
+    /**
+     * Случайным образом выбирает тип оружия
+     * **/
     private void generateType(Random randomGenerator) {
         WeaponType[] types = WeaponType.values();
         WeaponType type = (WeaponType) Utilities.getRandomElement(types, randomGenerator);
         this.weaponType = type;
     }
 
+    /**
+     * Генерирует случайный урон оружия основываясь на суровости локации
+     * **/
+    //TODO Вынести констранты
     private void generateDamage(Random randomGenerator, Integer hardnessPoints) {
         this.baseDamage = 5 + randomGenerator.nextInt(4) + hardnessPoints*(5 + randomGenerator.nextInt(4));
     }
 
+    /**
+     * Весёлая генерация имени
+     * **/
     private void generateName(Random randomGenerator) {
         StringBuilder sb = new StringBuilder();
 
@@ -102,6 +136,7 @@ public class Weapon extends GameItemClass implements Equipment {
     /**
      * Примерная зависимость ценности оружия от урона
      * **/
+    //TODO Вынести подсчёт цены в какой-нибудь другой класс
     private void generateCost(Random randomGenerator) {
         Integer cost = 5*baseDamage + randomGenerator.nextInt(baseDamage*3);
         this.baseCost = cost;
@@ -110,6 +145,7 @@ public class Weapon extends GameItemClass implements Equipment {
     /**
      * Примерная генерация веса (может изменяться в зависимости от типа оружия)
      **/
+    //TODO Вынести констранты
     private void generateWeight(Random randomGenerator) {
         Integer weight = 3 + randomGenerator.nextInt(3);
         this.weight = weight;

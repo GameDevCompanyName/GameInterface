@@ -14,4 +14,7 @@ public class Strings {
     public static final String WEAPON_DEFAULT_WEAPON_NAME = "Ударятель";
 
 
+    public static final String ITEM_DEFAULT_NAME = "Предмет";
+
+
 }

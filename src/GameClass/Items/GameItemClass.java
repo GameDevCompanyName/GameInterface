@@ -1,5 +1,6 @@
 package GameClass.Items;
 
+import GameClass.Constants.Strings;
 import GameInterface.Items.GameItem;
 import GameInterface.Items.ItemContainer;
 import GameInterface.Items.ItemRarity;
@@ -18,6 +19,9 @@ public class GameItemClass implements GameItem {
     protected Boolean isTransferable;
     protected ItemContainer currentContainer;
 
+    /**
+     * Полный конструктор с явным указанием всех параметров
+     * **/
     public GameItemClass(String name,
                          ItemRarity rarity,
                          Integer weight,
@@ -40,6 +44,9 @@ public class GameItemClass implements GameItem {
         this.isTransferable = isTransferable;
     }
 
+    /**
+     * Неполный конструктор для лута, например
+     * **/
     public GameItemClass(String name, ItemRarity rarity, Integer weight, Integer baseCost) {
         this.name = name;
         this.rarity = rarity;
@@ -53,6 +60,9 @@ public class GameItemClass implements GameItem {
         this.isTransferable = true;
     }
 
+    /**
+     * Конструктор аналогичный предыдущему, подразумевающий, что необходимые поля будут реализованы позже
+     * **/
     public GameItemClass() {
         this.name = null;
         this.rarity = null;
@@ -68,22 +78,22 @@ public class GameItemClass implements GameItem {
 
     @Override
     public String getName() {
-        return name;
+        return (name == null) ? Strings.ITEM_DEFAULT_NAME : name;
     }
 
     @Override
     public ItemRarity getRarity() {
-        return rarity;
+        return (rarity == null) ? ItemRarity.COMMON : rarity;
     }
 
     @Override
     public Integer getWeight() {
-        return weight;
+        return (weight == null) ? 0 : weight;
     }
 
     @Override
     public Integer getBaseCost() {
-        return baseCost;
+        return (baseCost == null) ? 0 : baseCost;
     }
 
     @Override
@@ -130,6 +140,9 @@ public class GameItemClass implements GameItem {
         }
     }
 
+    /**
+     * Логика перемещения предмета в другой контейнер с отслеживанием нестандартных ситуаций
+     * **/
     @Override
     public Boolean transfer(ItemContainer newContainer) {
         if (!isTransferable)
