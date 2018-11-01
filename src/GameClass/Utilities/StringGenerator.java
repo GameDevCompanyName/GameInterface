@@ -1,7 +1,7 @@
 package GameClass.Utilities;
 
 import GameClass.Constants.Strings;
-import GameClass.Items.Weapons.WeaponType;
+import GameClass.Items.Equipment.Weapons.WeaponType;
 
 import java.util.Random;
 

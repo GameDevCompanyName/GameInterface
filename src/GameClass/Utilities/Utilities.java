@@ -1,7 +1,5 @@
 package GameClass.Utilities;
 
-import GameClass.Items.Weapons.WeaponType;
-
 import java.util.Random;
 
 public class Utilities {

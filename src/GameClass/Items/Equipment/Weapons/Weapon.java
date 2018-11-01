@@ -1,4 +1,4 @@
-package GameClass.Items.Weapons;
+package GameClass.Items.Equipment.Weapons;
 
 import GameClass.Actions.BasicAttack;
 import GameClass.Constants.Integers;

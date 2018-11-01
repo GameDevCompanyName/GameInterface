@@ -1,6 +1,5 @@
 package GameInterface.Character;
 
-import GameClass.Items.Weapons.Weapon;
 import GameInterface.Character.Effects.Effect;
 import GameInterface.Character.Effects.EffectContainer;
 import GameInterface.Action.ActionContainer;
