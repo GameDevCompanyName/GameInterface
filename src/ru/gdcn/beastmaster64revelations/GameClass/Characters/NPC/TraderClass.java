@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 //TODO Трейдер должен расширять NPC а не Character
-public class TraderClass extends CharacterClass implements Trader {
+public class TraderClass extends NPCclass implements Trader {
 
     //TODO Пока не очень представляю как будет работать трейдер в игре, поэтому нужно будет доделать его попозже
     //Когда будет понятно что от него нужно

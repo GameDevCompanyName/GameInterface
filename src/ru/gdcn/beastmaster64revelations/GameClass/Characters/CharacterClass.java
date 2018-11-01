@@ -1,5 +1,7 @@
 package ru.gdcn.beastmaster64revelations.GameClass.Characters;
 
+import ru.gdcn.beastmaster64revelations.GameClass.Constants.Integers;
+import ru.gdcn.beastmaster64revelations.GameClass.Utilities.Utilities;
 import ru.gdcn.beastmaster64revelations.GameInterface.Action.ActionContainer;
 import ru.gdcn.beastmaster64revelations.GameInterface.Character.Character;
 import ru.gdcn.beastmaster64revelations.GameInterface.Character.Effects.Effect;
@@ -85,8 +87,7 @@ public class CharacterClass implements Character {
         return null;
     }//TODO
 
-    //TODO Чем FullAtack должен отличаться от getBasicAtack?
-    //Может стоит сделать только один публичный метод с атакой?
+    //TODO FullAttack должен учитывать надетое оружие
     @Override
     public Integer getFullAttack() {
         return getBasicAttack();
@@ -107,82 +108,90 @@ public class CharacterClass implements Character {
         return null;
     }//TODO
 
-    //TODO А если персонаж мёртв?
     @Override
     public Boolean gainLuck(Integer points) {
+        if (this.isDead() || points < 0)
+            return false;
         luck += points;
         return true;
     }
 
-    //TODO А если персонаж мёртв?
     @Override
     public Boolean gainStrength(Integer points) {
+        if (this.isDead() || points < 0)
+            return false;
         strength += points;
         return true;
     }
 
-    //TODO А если персонаж мёртв?
     @Override
     public Boolean gainAgility(Integer points) {
+        if (this.isDead() || points < 0)
+            return false;
         agility += points;
         return true;
     }
 
-    //TODO А если персонаж мёртв?
     @Override
     public Boolean gainIntellect(Integer points) {
+        if (this.isDead() || points < 0)
+            return false;
         intellect += points;
         return true;
     }
 
-    //TODO Что если luck <= 0? или персонаж мёртв
     @Override
     public Boolean reduceLuck(Integer points) {
+        if (this.isDead() || points < 0 || luck - points <= 0)
+            return false;
         luck -= points;
         return true;
     }
 
-    //TODO Что если str <= 0? или персонаж мёртв
     @Override
     public Boolean reduceStrength(Integer points) {
+        if (this.isDead() || points < 0 || strength - points <= 0)
+            return false;
         strength -= points;
         return true;
     }
 
-    //TODO Что если agi <= 0? или персонаж мёртв
     @Override
     public Boolean reduceAgility(Integer points) {
+        if (this.isDead() || points < 0 || agility - points <= 0)
+            return false;
         agility -= points;
         return true;
     }
 
-    //TODO Что если int <= 0? или персонаж мёртв
     @Override
     public Boolean reduceIntellect(Integer points) {
+        if (this.isDead() || points < 0 || intellect - points <= 0)
+            return false;
         intellect -= points;
         return true;
     }
 
-    //TODO Что если кол-во хп максимально? Нужно отдельно хранить maxHP
-    //Что если персонаж мёртв?
     @Override
     public Boolean dealHeal(Integer points) {
+        if (this.isDead() || points < 0 || HP + points >= Integers.MAX_HP)
+            return false;
         HP += points;
         return true;
     }
 
-    //TODO Что если HP <= 0?
-    //Что если персонаж мёртв?
     @Override
     public Boolean dealPhysicalDamage(Integer points) {
+        if (this.isDead() || points < 0 || HP - points <= 0)
+            return false;
         HP -= points;
         return true;
     }
 
-    //TODO Что если HP <= 0?
-    //Что если персонаж мёртв?
     @Override
     public Boolean dealMagicalDamage(Integer points) {
+        if (this.isDead() || points < 0 || HP - points <= 0)
+            return false;
         HP -= points;
         return true;
     }
@@ -209,13 +218,16 @@ public class CharacterClass implements Character {
 
     @Override
     public Boolean receiveMoney(Integer points) {
+        if (points < 0)
+            return false;
         money += points;
         return true;
     }
 
-    //TODO Что если money < points?
     @Override
     public Boolean loseMoney(Integer points) {
+        if (money < points || points < 0)
+            return false;
         money -= points;
         return true;
     }
@@ -230,9 +242,10 @@ public class CharacterClass implements Character {
         return currentLocation;
     }
 
-    //TODO Что если location == null?
     @Override
     public Boolean changeLocationTo(Location location) {
+        if (location == null)
+            return false;
         currentLocation = location;
         return true;
     }
