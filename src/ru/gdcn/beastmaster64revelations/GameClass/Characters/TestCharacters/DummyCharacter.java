@@ -1,17 +1,22 @@
 package ru.gdcn.beastmaster64revelations.GameClass.Characters.TestCharacters;
 
+import ru.gdcn.beastmaster64revelations.GameClass.Items.Equipment.Weapons.Weapon;
+import ru.gdcn.beastmaster64revelations.GameClass.Items.ItemContainerClass;
 import ru.gdcn.beastmaster64revelations.GameInterface.Action.ActionContainer;
 import ru.gdcn.beastmaster64revelations.GameInterface.Character.Character;
 import ru.gdcn.beastmaster64revelations.GameInterface.Character.Effects.Effect;
 import ru.gdcn.beastmaster64revelations.GameInterface.Character.Effects.EffectContainer;
 import ru.gdcn.beastmaster64revelations.GameInterface.Items.Equipment;
 import ru.gdcn.beastmaster64revelations.GameInterface.Items.ItemContainer;
+import ru.gdcn.beastmaster64revelations.GameInterface.Items.ItemRarity;
 import ru.gdcn.beastmaster64revelations.GameInterface.World.Location.Location;
 
 public class DummyCharacter implements Character {
 
     protected Integer HP = 100;
     protected Location currentLocation;
+    protected ItemContainer inventory = new ItemContainerClass(100, false);
+    protected Weapon weapon = new Weapon(10, ItemRarity.COMMON);
 
     @Override
     public String getName() {
@@ -50,12 +55,12 @@ public class DummyCharacter implements Character {
 
     @Override
     public ItemContainer getItemContainer() {
-        return null;
+        return inventory;
     }
 
     @Override
     public Equipment getCurrentWeapon() {
-        return null;
+        return weapon;
     }
 
     @Override
