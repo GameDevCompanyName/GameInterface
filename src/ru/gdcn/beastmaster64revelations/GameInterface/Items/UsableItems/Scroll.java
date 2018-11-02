@@ -1,6 +1,7 @@
 package ru.gdcn.beastmaster64revelations.GameInterface.Items.UsableItems;
 
 import ru.gdcn.beastmaster64revelations.GameInterface.Action.Action;
+import ru.gdcn.beastmaster64revelations.GameInterface.Character.Character;
 import ru.gdcn.beastmaster64revelations.GameInterface.Items.GameItem;
 
 public interface Scroll extends GameItem {

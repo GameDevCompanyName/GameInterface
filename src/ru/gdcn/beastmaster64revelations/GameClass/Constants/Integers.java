@@ -6,4 +6,7 @@ public class Integers {
     public static final int WEAPON_NAME_POST_CHANCE = 15;
     public static final int MAX_HP = 100;
 
+    public static final int SCROLL_WEIGHT_DEFAULT = 1;
+    public static final int SCROLL_COST_DEFAULT = 10;
+
 }
