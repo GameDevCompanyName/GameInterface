@@ -21,9 +21,13 @@ public class StrangerClass extends NPCclass implements Stranger {
                          Integer strength,
                          Integer agility,
                          Integer intellect,
-                         Integer luck) {
-        super(name, location, strength, agility, intellect, luck);
+                         Integer luck,
+                         Boolean isTalkable,
+                         Boolean isAvoidable,
+                         Boolean isAttackable) {
+        super(name, location, strength, agility, intellect, luck, isTalkable, isAvoidable, isAttackable);
     }
+
 
     @Override
     public List<String> getPhrases() {

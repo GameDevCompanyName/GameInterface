@@ -1,5 +1,7 @@
 package ru.gdcn.beastmaster64revelations.GameInterface.World;
 
+import ru.gdcn.beastmaster64revelations.GameInterface.Character.NPC.Player;
+
 import java.util.List;
 
 public interface World {
@@ -21,4 +23,6 @@ public interface World {
     /** Возвращает лор мира, доступный игроку в данный момент игры **/
     public String getLore();
 
+    /** Возвращает ссылку на игрока **/
+    public Player getPlayer();
 }

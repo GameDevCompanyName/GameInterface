@@ -13,30 +13,39 @@ import java.util.List;
 public class NPCclass extends CharacterClass implements NPC {
 
     private Boolean isValuableForLore;
+    private Boolean isTalkable;
+    private Boolean isAvoidable;
+    private Boolean isAttackable;
 
     public NPCclass(String name,
                     Location location,
                     Integer strength,
                     Integer agility,
                     Integer intellect,
-                    Integer luck) {
+                    Integer luck,
+                    Boolean isTalkable,
+                    Boolean isAvoidable,
+                    Boolean isAttackable) {
         super(name, location, strength, agility, intellect, luck);
         this.isValuableForLore = isValuableForLore;
+        this.isTalkable = isTalkable;
+        this.isAvoidable = isAvoidable;
+        this.isAttackable = isAttackable;
     }
 
     @Override
     public Boolean isAttackable() {
-        return true;
+        return isAttackable != null && isAttackable;
     }
 
     @Override
     public Boolean isTalkable() {
-        return false;
+        return isTalkable != null && isTalkable;
     }
 
     @Override
     public Boolean isAvoidable() {
-        return true;
+        return isAvoidable != null && isAvoidable;
     }
 
     @Override
@@ -58,6 +67,6 @@ public class NPCclass extends CharacterClass implements NPC {
 
     @Override
     public Boolean isValuableForLore() {
-        return isValuableForLore;
+        return isValuableForLore != null && isValuableForLore;
     }
 }

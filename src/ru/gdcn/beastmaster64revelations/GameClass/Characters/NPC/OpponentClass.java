@@ -22,21 +22,25 @@ public class OpponentClass extends NPCclass implements Opponent {
                          Integer agility,
                          Integer intellect,
                          Integer luck,
-                         OpponentType type,
-                         Boolean isValuableForLore,
-                         Boolean isAgressive) {
-        super(name, location, strength, agility, intellect, luck);
+                         Boolean isTalkable,
+                         Boolean isAvoidable,
+                         Boolean isAttackable,
+                         Boolean isAgressive,
+                         OpponentType type) {
+        super(name, location, strength, agility, intellect, luck, isTalkable, isAvoidable, isAttackable);
         this.type = type;
+        this.isAgressive = isAgressive;
     }
+
 
     @Override
     public OpponentType getType() {
-        return type;
+       return type;
     }
 
     @Override
     public Boolean isAgressive() {
-        return isAgressive;
+        return isAgressive != null && isAgressive;
     }
 
 }

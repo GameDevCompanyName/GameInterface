@@ -132,11 +132,11 @@ public interface Character {
 
     /** Снимает экипировку. После снятия предмет перемещается в инвентарь персонажа.
      *  Возвращает false в исключительных случаях **/
-    public Boolean removeArmor(Equipment item);
+    public Boolean removeArmor();
 
     /** Убирает оружие. После снятия предмет перемещается в инвентарь персонажа.
      *  Возвращает false в исключительных случаях **/
-    public Boolean removeWeapon(Equipment item);
+    public Boolean removeWeapon();
 
     /** Увеличивает количество денег персонажа на величину points
      *  Возвращает false в исключительных случаях **/
