@@ -63,7 +63,6 @@ public class ScrollClass extends GameItemClass implements Scroll {
         return type;
     }
 
-
     @Override
     public ScrollUseResult use(Character user, Character other) {
         action.use(user, other);

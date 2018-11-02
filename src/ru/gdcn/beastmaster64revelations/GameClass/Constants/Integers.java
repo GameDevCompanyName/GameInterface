@@ -8,5 +8,8 @@ public class Integers {
 
     public static final int SCROLL_WEIGHT_DEFAULT = 1;
     public static final int SCROLL_COST_DEFAULT = 10;
+    public static final Integer SCROLL_REQAP_DEFAULT = 2;
+
+
 
 }
