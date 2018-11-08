@@ -32,7 +32,6 @@ public class OpponentClass extends NPCclass implements Opponent {
         this.isAgressive = isAgressive;
     }
 
-
     @Override
     public OpponentType getType() {
        return type;

@@ -1,66 +1,104 @@
 package ru.gdcn.beastmaster64revelations.GameClass.Characters;
 
+import ru.gdcn.beastmaster64revelations.GameClass.Actions.ActionContainerClass;
 import ru.gdcn.beastmaster64revelations.GameInterface.Character.Character;
+import ru.gdcn.beastmaster64revelations.GameInterface.Character.NPC.NPC;
+import ru.gdcn.beastmaster64revelations.GameInterface.Character.NPC.Opponent;
 import ru.gdcn.beastmaster64revelations.GameInterface.Character.NPC.Player;
-import ru.gdcn.beastmaster64revelations.GameInterface.Items.ItemContainer;
+import ru.gdcn.beastmaster64revelations.GameInterface.World.Dungeon;
 import ru.gdcn.beastmaster64revelations.GameInterface.World.Location.Location;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class PlayerClass extends CharacterClass implements Player {
 
-    //TODO Есть геттеры для полей, но нет методов добавления новых данных
+    private ArrayList<Opponent> opponentsKilled;
+    private ArrayList<NPC> civilsTalked;
+    private ArrayList<NPC> civilsKilled;
+    private LinkedList<Location> locationsTravelled;
+    private LinkedList<Dungeon> dungeonsCleared;
 
-    private ArrayList<Character> opponentsKilled;
-    private ArrayList<Character> civilsTalked;
-    private ArrayList<Character> civilsKilled;
-    private ArrayList<Location> locationsTravelled;
-    private ArrayList<Location> dungeonsCleared;
-
-    //TODO А когда инициализируются ArrayList'ы? Поля нигде не инициализируются
-    public PlayerClass(String name, Location location, Integer strength, Integer agility, Integer intellect, Integer luck) {
-        super(name, location, strength, agility, intellect, luck);
+    public PlayerClass(String name,
+                       Location location,
+                       Integer strength,
+                       Integer agility,
+                       Integer intellect,
+                       Integer luck,
+                       ActionContainerClass actions) {
+        super(name, location, strength, agility, intellect, luck, actions);
+        List<Opponent> opponentsKilled = new ArrayList<Opponent>();
+        List<NPC> civilsKilled = new ArrayList<NPC>();
+        List<NPC> civilsTalked = new ArrayList<NPC>();
+        List<Location> locationsCleared = new ArrayList<Location>();
+        List<Dungeon> dungeonsCleared = new ArrayList<Dungeon>();
     }
 
     @Override
-    public List<Character> getKilledOpponents() {
+    public List<Opponent> getKilledOpponents() {
         return opponentsKilled;
     }
 
-    //TODO Лучше указать что содержит лист
     @Override
-    public List getTalkedCivils() {
+    public List<NPC> getTalkedCivils() {
         return civilsTalked;
     }
 
-    //TODO Лучше указать что содержит лист
-    //Почему Civils?
+    //Civils - мирные пацаны (не противники). Храним список убитых мирных челиков
     @Override
-    public List getKilledCivils() {
+    public List<NPC> getKilledCivils() {
         return civilsKilled;
     }
 
-    //TODO Лучше указать что содержит лист
     @Override
-    public List getTravelledLocations() {
+    public List<Location> getTravelledLocations() {
         return locationsTravelled;
     }
 
-    //TODO Лучше указать что содержит лист
     @Override
-    public List getDungeonsCleared() {
+    public List<Dungeon> getDungeonsCleared() {
         return dungeonsCleared;
-    }
-
-    //TODO У Character уже есть его инвентарь и экипированные предметы
-    @Override
-    public ItemContainer getShmot() {
-        return null;
     }
 
     @Override
     public Location getPlayerLocation() {
         return currentLocation;
     }
+
+    public Boolean addKilledOpponent(Opponent opponent){
+        if (opponent == null || opponentsKilled.contains(opponent))
+            return false;
+        opponentsKilled.add(opponent);
+        return true;
+    }
+
+    public Boolean addKilledCivil(NPC civil){
+        if (civil == null || civil instanceof Opponent || civilsKilled.contains(civil))
+            return false;
+        civilsKilled.add(civil);
+        return true;
+    }
+
+    public Boolean addTalkedCivil(NPC civil){
+        if (civil == null || civil instanceof Opponent || civilsTalked.contains(civil))
+            return false;
+        civilsTalked.add(civil);
+        return true;
+    }
+
+    public Boolean addTravelledLocation(Location location){
+        if (location == null || locationsTravelled.contains(location))
+            return false;
+        locationsTravelled.add(location);
+        return true;
+    }
+
+    public Boolean addDungeonsCleared(Dungeon dungeon){
+        if (dungeon == null || dungeonsCleared.contains(dungeon))
+            return false;
+        dungeonsCleared.add(dungeon);
+        return true;
+    }
+
 }

@@ -1,5 +1,6 @@
 package ru.gdcn.beastmaster64revelations.GameClass.Characters;
 
+import ru.gdcn.beastmaster64revelations.GameClass.Actions.ActionContainerClass;
 import ru.gdcn.beastmaster64revelations.GameClass.Constants.Integers;
 import ru.gdcn.beastmaster64revelations.GameClass.Items.Equipment.Weapons.Weapon;
 import ru.gdcn.beastmaster64revelations.GameClass.Items.ItemContainerClass;
@@ -27,13 +28,15 @@ public class CharacterClass implements Character {
     protected ItemContainerClass equipment;
     protected Equipment currentWeapon;
     protected Equipment currentArmor;
+    protected ActionContainerClass actions;
 
     public CharacterClass(String name,
                           Location location,
                           Integer strength,
                           Integer agility,
                           Integer intellect,
-                          Integer luck) {
+                          Integer luck,
+                          ActionContainerClass actions) {
         this.maxHP = strength * 10 / agility;
         this.HP = maxHP;
         this.name = name;
@@ -43,11 +46,12 @@ public class CharacterClass implements Character {
         this.intellect = intellect;
         this.luck = luck;
         this.money = 0;
+        this.actions = actions;
     }
 
     public int getMaxHP(){
         return maxHP;
-    };
+    }
 
     @Override
     public String getName() {
@@ -106,8 +110,8 @@ public class CharacterClass implements Character {
 
     @Override
     public ActionContainer getActionContainer() {
-        return null;
-    }//TODO
+        return actions;
+    }
 
     @Override
     public Integer getMoney() {

@@ -7,7 +7,6 @@ import ru.gdcn.beastmaster64revelations.GameInterface.World.Location.Location;
 import java.util.ArrayList;
 import java.util.List;
 
-//TODO Почему интерфейс Stranger не расширяет интерфейс NPC?
 public class StrangerClass extends NPCclass implements Stranger {
 
     /*Todo Должен содержать не строки, а варианты диалогов.
